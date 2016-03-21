@@ -1,8 +1,10 @@
-# formar
+# formar<br/>
 
-mysql.server stop
-sudo mysqld_safe --skip-grant-tables
-mysql -u root
-update user set authentication_string=password('1111') where user='root';
-FLUSH PRIVILEGES;
-\q
+mysql.server stop <br/>
+sudo mysqld_safe --skip-grant-tables <br/>
+mysql -u root <br/>
+update user set authentication_string=password('1111') where user='root'; <br/>
+FLUSH PRIVILEGES; <br/>
+\q <br/><br/>
+
+http://www.newthinktank.com/2014/08/mysql-video-tutorial/
