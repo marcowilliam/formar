@@ -62,6 +62,7 @@ class LoginController {
 		                             usernameParameter: conf.apf.usernameParameter,
 		                             passwordParameter: conf.apf.passwordParameter,
 		                             gspLayout: conf.gsp.layoutAuth]
+
 	}
 
 	/** The redirect action for Ajax requests. */

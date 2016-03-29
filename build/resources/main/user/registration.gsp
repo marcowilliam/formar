@@ -4,7 +4,7 @@
   <meta name="layout" content="main" />
 </head>
 <body>
-<g:form class="simpleform" url="[action:'create',controller:'user']">
+<g:form class="simpleform" url="&#91;controller:'user',action:'register'&#93;">
   <fieldset>
     <legend>User Registration</legend>
     <p class="info">
@@ -31,6 +31,15 @@
         class="${hasErrors(bean:user,field:'password','errors')}" />
     </p>
     <p>
+      <label for="firstName">First Name</label>
+      <g:textField name="firstName" value="${user?.firstName}"
+        class="${hasErrors(bean:user,field:'firstName','errors')}" />
+    </p>
+    <p>
+      <label for="lastName">Last Name</label>
+      <g:textField name="lastName" value="${user?.lastName}"
+        class="${hasErrors(bean:user,field:'lastName','errors')}" />
+    </p>
     <p class="button">
       <label>&nbsp;</label>
       <g:submitButton class="button" name="submitButton" value="Create Account" />

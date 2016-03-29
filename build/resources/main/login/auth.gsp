@@ -94,7 +94,6 @@
 		</g:if>
 
 		<form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" class="cssform" autocomplete="off">
-			alooooo
 			<p>
 				<label for="username"><g:message code='springSecurity.login.username.label'/>:</label>
 				<input type="text" class="text_" name="${usernameParameter ?: 'username'}" id="username"/>
@@ -108,6 +107,7 @@
 			<p id="remember_me_holder">
 				<input type="checkbox" class="chk" name="${rememberMeParameter ?: 'remember-me'}" id="remember_me" <g:if test='${hasCookie}'>checked="checked"</g:if>/>
 				<label for="remember_me"><g:message code='springSecurity.login.remember.me.label'/></label>
+				<g:link controller="user" action="create">Sign up now!</g:link>
 			</p>
 
 			<p>
