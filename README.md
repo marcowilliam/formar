@@ -14,4 +14,8 @@ $ FLUSH PRIVILEGES; <br/>
 $ \q <br/><br/>
 
 Command lines<br/>
-http://www.newthinktank.com/2014/08/mysql-video-tutorial/
+http://www.newthinktank.com/2014/08/mysql-video-tutorial
+<br/><br/>
+### Instaling Bootstrap pulgin<br/>
+https://github.com/kensiprell/bootstrap-framework<br/>
+https://github.com/kensiprell/bootstrap-framework-sample
