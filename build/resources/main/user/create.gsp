@@ -16,6 +16,11 @@
       </div>
     </g:hasErrors>
     <p>
+      <label for="name">Name</label>
+      <g:textField name="name" value="${user?.name}"
+        class="${hasErrors(bean:user,field:'name','errors')}"/>
+    </p>
+    <p>
       <label for="username">Username</label>
       <g:textField name="username" value="${user?.username}"
         class="${hasErrors(bean:user,field:'username','errors')}"/>

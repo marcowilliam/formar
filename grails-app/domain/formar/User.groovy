@@ -11,17 +11,20 @@ class User implements Serializable {
 
 	transient springSecurityService
 
+	String name
 	String username
 	String password
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	static hasMany = [courses: Course]
 
-	User(String username, String password) {
+	User(String username, String password, String name) {
 		this()
 		this.username = username
 		this.password = password
+		this.name = name
 	}
 
 	Set<Role> getAuthorities() {
@@ -45,6 +48,7 @@ class User implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
+		name blank: false
 		password blank: false, password: true
 		username blank: false, unique: true
 	}

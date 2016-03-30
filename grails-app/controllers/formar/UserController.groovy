@@ -1,5 +1,4 @@
 package formar
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -24,8 +23,10 @@ class UserController {
         if (request.method == 'POST') {
             // create domain object and assign parameters using data binding
             def user = new User(params)
+            
             //u.passwordHashed = u.password.encodeAsPassword()
             if(user.save()) {
+                UserRole.create(user,Role.findWhere(authority: 'ROLE_USER'),true)
                 // validate/save ok, store user in session, redirect to homepage
                 redirect(uri:'/')
 

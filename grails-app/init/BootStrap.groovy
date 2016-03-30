@@ -4,8 +4,10 @@ class BootStrap {
 
     def init = { servletContext ->
     
+    	
     	def adminRole = Role.findOrSaveWhere(authority: 'ROLE_ADMIN')
-    	def user = User.findOrSaveWhere(username: 'marcowilliamdf@gmail.com', password: 'admin')
+    	Role.findOrSaveWhere(authority: 'ROLE_USER')
+    	def user = User.findOrSaveWhere(username: 'marcowilliam', password: 'admin', name: "Marco")
 
     	if( !user.authorities.contains(adminRole)){
 
