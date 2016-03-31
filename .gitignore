@@ -1,4 +1,4 @@
-ld/
+build/
 .gradle/
 *.iml
 *.ipr
