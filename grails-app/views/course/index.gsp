@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="freelancer"/>
         <g:set var="entityName" value="${message(code: 'course.label', default: 'Course')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#list-course" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+       <div class="container" style="padding-top:10%;">
+        <g:if test="${courseList}">
+            <div class="row">
+            <g:each status="i" in="${courseList}" var="course">
+            
+                <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                
+                <div class="caption">
+                <h3 style="text-align:center">${course.name}</h3>
+                <p>${course.professor}</p>
+                <p>${course.description}</p>
+                <a href="/course/show/${i+1}"> Ver </a>
+            </g:each>
+               
+                </div>
+                </div>
+                </div>
+        </g:if>
+        <g:else>
         </div>
-        <div id="list-course" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${courseList}" />
-
-            <div class="pagination">
-                <g:paginate total="${courseCount ?: 0}" />
+            <center>
+            <div class="row">
+            
+            <div class="alert alert-info" role="alert" style="width:100%;">
+             Você não tem nenhuma matéria cadastrada
             </div>
-        </div>
+      
+            </div>
+            </center>
+        </g:else>
+
+      
+
+        <g:link class="create" action="create"><g:message code="Adicionar Matéria" args="[entityName]" /></g:link>
+        
+    
     </body>
 </html>
