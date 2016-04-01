@@ -20,7 +20,6 @@
                 <p>
                 <strong>Descrição:</strong>
                 ${course.description}
-                ${activities[0].endDate}
                 </p>
                 </center>
             </div>
@@ -32,6 +31,45 @@
                     <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                 </fieldset>
             </g:form>
+
+            <div class="container" style="padding-top:10%;">
+            <g:if test="${course.activities}">
+            <div class="row">
+            <g:each status="i" in="${course.activities}" var="activity">
+            
+                <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                
+                <div class="caption">
+                <h3 style="text-align:center">${activity.name}</h3>
+                <p>${activity.description}</p>
+                <p>Deadline: ${activity.endDate}</p>
+                </div>
+                </div>
+                </div>
+            </g:each>
+               
+                
+                
+        </g:if>
+        <g:else>
+         
+            <div class="row">
+            
+            <div class="alert alert-info" role="alert" style="width:100%;">
+             Nenhuma atividade para essa matéria
+            </div>
+      
+            </div>
+            
+        </g:else>
+        </div>
+        <div class="row">
+        <center>
+        <a class="btn btn-primary btn-sm" href="/activity/create" role="button">Adicionar atividade</a>
+        </center>
+        </div>
+        </div>
 
     </body>
 </html>

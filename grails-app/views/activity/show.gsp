@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="freelancer" />
         <g:set var="entityName" value="${message(code: 'activity.label', default: 'Activity')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
@@ -14,11 +14,14 @@
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
+        <center>
         <div id="show-activity" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
+            <div class="message" role="status">
+                <span class="label label-info">${flash.message}</span>
+            </div>           
+             </g:if>
+            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <f:display bean="activity" />
             <g:form resource="${this.activity}" method="DELETE">
                 <fieldset class="buttons">
@@ -27,5 +30,6 @@
                 </fieldset>
             </g:form>
         </div>
+        </center>
     </body>
 </html>

@@ -6,11 +6,14 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
+        <center>
         <div id="create-course" class="content scaffold-create" role="main" style="padding-top:10%;">
-            <h1><g:message code="Adicionar Matéria" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+            <div class="message" role="status">
+                <span class="label label-warning">${flash.message}</span>
+            </div>
             </g:if>
+            <h1><g:message code="Adicionar Matéria" args="[entityName]" /></h1>
             <g:hasErrors bean="${this.course}">
             <ul class="errors" role="alert">
                 <g:eachError bean="${this.course}" var="error">
@@ -27,5 +30,6 @@
                 </fieldset>
             </g:form>
         </div>
+        </center>
     </body>
 </html>
