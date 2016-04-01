@@ -8,12 +8,13 @@
 <div id="login">
 	<div class="inner">
 		<div class="fheader"><g:message code='springSecurity.login.header'/></div>
-
-		<g:if test='${flash.message}'>
-			<div class="login_message">${flash.message}</div>
-		</g:if>
 		<center>
 		<div class="container" style="padding-top:10%;">
+	  		<g:if test='${flash.message}'>
+				<div class="login_message">
+					<span class="label label-warning">${flash.message}</span>
+				</div>
+			</g:if>
   			<h2>Login</h2>
   			<form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" autocomplete="off" style="width:50%;">
     			<div class="form-group">
@@ -36,8 +37,8 @@
 			</p>
     			</form>
     	</div>
-  			
-  			</center>
+
+  		</center>
 	</div>
 </div>
 <script>
