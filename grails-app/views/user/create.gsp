@@ -1,46 +1,53 @@
 <html>
 <head>
   <title>POP - User Registration</title>
-  <meta name="layout" content="main" />
+  <meta name="layout" content="freelancer"/>
 </head>
 <body>
-<g:form class="simpleform" url="[action:'create',controller:'user']">
-  <fieldset>
-    <legend>User Registration</legend>
-    <p class="info">
-      Complete the form below to create an account!
-    </p>
-    <g:hasErrors bean="${user}">
-      <div class="errors">
-        <g:renderErrors bean="${user}"/>
-      </div>
-    </g:hasErrors>
-    <p>
-      <label for="name">Name</label>
-      <g:textField name="name" value="${user?.name}"
+
+
+<container>
+    <div class="container" style="padding-top:10%;">
+        <h2>Cadastro</h2>
+        <g:form url="[action:'create',controller:'user']">
+          <div class="form-group">
+              <label for="name"><g:message code='Nome'/>:</label><br/>
+              <g:textField name="name" value="${user?.name}"
         class="${hasErrors(bean:user,field:'name','errors')}"/>
-    </p>
-    <p>
-      <label for="username">Username</label>
-      <g:textField name="username" value="${user?.username}"
+          </div>
+          <div class="form-group">
+              <label for="username"><g:message code='Usuário'/>:</label><br/>
+              <g:textField name="username" value="${user?.username}"
         class="${hasErrors(bean:user,field:'username','errors')}"/>
-    </p>
-    <p>
-      <label for="password">Password</label>
-      <g:passwordField name="password"
+          </div>
+          <div class="form-group">
+              <label for="password"><g:message code='Senha'/>:</label><br/>
+              <g:passwordField name="password"
         class="${hasErrors(bean:user,field:'password','errors')}" />
-    </p>
-    <p>
-      <label for="confirm">Confirm Password</label>
-      <g:passwordField name="confirm"
+          </div>
+           <div class="form-group">
+              <label for="confirm"><g:message code='Confirmar senha'/>:</label><br/>
+              <g:passwordField name="confirm"
         class="${hasErrors(bean:user,field:'password','errors')}" />
-    </p>
+          </div>
+          
+      <p>
+      <g:submitButton class="btn btn-default" name="submitButton" value="Create Account" />
+      </p>
+          </form>
+      </div>
+        </fieldset>
+        </container>
+
+  
+    
+    
     <p>
     <p class="button">
       <label>&nbsp;</label>
-      <g:submitButton class="button" name="submitButton" value="Create Account" />
+      
     </p>
-  </fieldset>
+  
 </g:form>
 </body>
 </html>
