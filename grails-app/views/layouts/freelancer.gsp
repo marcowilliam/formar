@@ -41,6 +41,9 @@
                     <li class="page-scroll">
                         <a href="/logout">Logout</a>
                     </li>
+                    <li>
+                        <a href="/user/show/${sec.loggedInUserInfo(field:'id')}">${sec.loggedInUserInfo(field: 'username')}</a>
+                    </li>
                     </sec:ifLoggedIn>
 
                 </ul>
