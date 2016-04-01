@@ -29,23 +29,22 @@
                     <li class="hidden">
                         <a href="/#"></a>
                     </li>
+                    <sec:ifNotLoggedIn>
                     <li class="page-scroll">
                         <a href="#about">Sobre</a>
                     </li>
-                    <sec:ifNotLoggedIn>
                     <li class="page-scroll">
                         <a href="/login">Login</a>
                     </li>
                     </sec:ifNotLoggedIn>
                     <sec:ifLoggedIn>
+                    <li>
+                        <a href="/user/show/${sec.loggedInUserInfo(field:'id')}"> Olá, ${sec.loggedInUserInfo(field: 'username')}</a>
+                    </li>
                     <li class="page-scroll">
                         <a href="/logout">Logout</a>
                     </li>
-                    <li>
-                        <a href="/user/show/${sec.loggedInUserInfo(field:'id')}">${sec.loggedInUserInfo(field: 'username')}</a>
-                    </li>
                     </sec:ifLoggedIn>
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
