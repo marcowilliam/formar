@@ -5,7 +5,7 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'formar.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'formar.UserRole'
 grails.plugin.springsecurity.authority.className = 'formar.Role'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = 'course/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/course/index'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],

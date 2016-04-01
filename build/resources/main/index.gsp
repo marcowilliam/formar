@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img class="img-responsive" src="${resource(dir: 'img', file: 'profile.png')}" alt="">
                     <div class="intro-text">
                         <span class="name">FORMAR</span>
                         <hr class="star-light">
@@ -27,54 +27,43 @@
     </header>
 
     <!-- About Section -->
-    <section class="success" id="about">
+    <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-light">
+                    <h2>Sobre</h2>
+                    <p></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>A preparação durante o semestre é um dos pontos fracos de muitos dos alunos universitários, não ter noção do que irá acontecer nas suas próximas semanas, pode ser fatal, te fazendo assumir compromissos desnecessários ou dormir horas importantes pode valer a sua vida.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p>Nossa ferramenta está aqui para propor uma melhoria na sua visão sobre o que poderá te esperar, cadastre suas matérias e suas atividades para nunca mais perder de vista, toda aquela bola de neve que pode estar se preparando.</p>
                 </div>
+                <sec:ifNotLoggedIn>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
+                    <a href="/user/create" class="btn-lg">
+                        The winter is coming, registre-se
                     </a>
                 </div>
+                </sec:ifNotLoggedIn>
             </div>
         </div>
     </section>
-    <section>
-        <div id="controllers" role="navigation">
-            <h2>Available Controllers:</h2>
-            <ul>
-                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                    <li class="controller">
-                        <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                    </li>
-                </g:each>
-            </ul>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <div class="footer-col col-md-6">
+                        <h3>De onde somos</h3>
+                        <p>Engenharia de Software<br>FGA, Universidade de Brasília</p>
                     </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    <div class="footer-col col-md-6">
+                        <h3>Quem somos?</h3>
+                        <p>Alunos da matéria de Paradigmas de Programação.</p>
                     </div>
                 </div>
             </div>
@@ -83,7 +72,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                        Copyright &copy; Paradigmas 2016
                     </div>
                 </div>
             </div>
