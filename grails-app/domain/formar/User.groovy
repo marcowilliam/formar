@@ -11,6 +11,7 @@ class User implements Serializable {
 
 	transient springSecurityService
 
+	static hasMany = [courses: Course]
 	String name
 	String username
 	String password
@@ -18,7 +19,7 @@ class User implements Serializable {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-	static hasMany = [courses: Course]
+	
 
 	User(String username, String password, String name) {
 		this()

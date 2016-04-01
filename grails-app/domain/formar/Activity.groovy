@@ -6,7 +6,7 @@ class Activity {
 	Date endDate
 	String description
 	Boolean done
-	static belongsTo = [course: Course]
+	Course course
 	
 
     static mapping = {

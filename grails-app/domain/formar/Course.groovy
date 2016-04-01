@@ -2,12 +2,12 @@ package formar
 
 class Course {
 
-
+	static hasMany = [activities: Activity]
 	String name
 	String professor
 	String description
-	static belongsTo = [user: User]
-	static hasMany = [activities: Activity]
+	User user
+	
 	
 
 	static mapping = {
