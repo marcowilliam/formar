@@ -40,6 +40,7 @@ class LoginController {
 	def index() {
 		if (springSecurityService.isLoggedIn()) {
 			redirect uri: conf.successHandler.defaultTargetUrl
+
 		}
 		else {
 			redirect action: 'auth', params: params
@@ -63,6 +64,8 @@ class LoginController {
 		                             passwordParameter: conf.apf.passwordParameter,
 		                             gspLayout: conf.gsp.layoutAuth]
 
+
+
 	}
 
 	/** The redirect action for Ajax requests. */
@@ -76,6 +79,7 @@ class LoginController {
 		if (springSecurityService.isLoggedIn() && authenticationTrustResolver.isRememberMe(authentication)) {
 			// have cookie but the page is guarded with IS_AUTHENTICATED_FULLY (or the equivalent expression)
 			redirect action: 'full', params: params
+
 			return
 		}
 
@@ -129,6 +133,8 @@ class LoginController {
 	/** The Ajax success redirect url. */
 	def ajaxSuccess() {
 		render([success: true, username: authentication.name] as JSON)
+		redirect 'index'
+
 	}
 
 	/** The Ajax denied redirect url. */

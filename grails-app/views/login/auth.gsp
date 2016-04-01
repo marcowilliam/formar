@@ -34,9 +34,9 @@
 			<p>
 				<input type="submit" class="btn btn-default" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
 			</p>
-    			
+    			</form>
     	</div>
-  			</form>
+  			
   			</center>
 	</div>
 </div>
