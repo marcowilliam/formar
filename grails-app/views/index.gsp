@@ -44,8 +44,8 @@
                 </div>
                 <sec:ifNotLoggedIn>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="/user/create" class="btn btn-lg">
-                        <i class="fa fa-download"></i> The winter is coming, registre-se
+                    <a href="/user/create" class="btn-lg">
+                        The winter is coming, registre-se
                     </a>
                 </div>
                 </sec:ifNotLoggedIn>
