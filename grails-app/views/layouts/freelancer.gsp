@@ -21,7 +21,12 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
+                <sec:ifNotLoggedIn>
                 <a class="navbar-brand" href="/#">FORMAR</a>
+                </sec:ifNotLoggedIn>
+                <sec:ifLoggedIn>
+                <a class="navbar-brand" href="/course/index">FORMAR</a>
+                </sec:ifLoggedIn>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
