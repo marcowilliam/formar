@@ -16,18 +16,19 @@
                 
                 <div class="caption">
                 <h3 style="text-align:center">${course.name}</h3>
-                <p>${course.professor}</p>
-                <p>${course.description}</p>
-                <a href="/course/show/${i+1}"> Ver </a>
+                <p>Professor(a): ${course.professor}</p>
+            
+                <a href="/course/show/${course.id}"> Ver </a>
+                </div>
+                </div>
+                </div>
             </g:each>
                
-                </div>
-                </div>
-                </div>
+                
+                
         </g:if>
         <g:else>
-        </div>
-            <center>
+         
             <div class="row">
             
             <div class="alert alert-info" role="alert" style="width:100%;">
@@ -35,12 +36,16 @@
             </div>
       
             </div>
-            </center>
+            
         </g:else>
-
-      
-
-        <g:link class="create" action="create"><g:message code="Adicionar Matéria" args="[entityName]" /></g:link>
+        </div>
+        <div class="row">
+        <center>
+        <a class="btn btn-primary btn-sm" href="/course/create" role="button">Adicionar matéria</a>
+        </center>
+        </div>
+        </div>
+        
         
     
     </body>
