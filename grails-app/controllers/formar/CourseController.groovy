@@ -7,10 +7,9 @@ import grails.transaction.Transactional
 class CourseController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-    def springSecurityService
 
     def index(Integer max) {
-        
+
         params.max = Math.min(max ?: 10, 100)
         respond Course.list(params), model:[courseCount: Course.count()]
     }
