@@ -30,6 +30,7 @@
                 <g:hiddenField name="version" value="${this.course?.version}" />
                 <fieldset class="form">
                     <f:all bean="course"/>
+                    <f:field bean="course" property="activities"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
