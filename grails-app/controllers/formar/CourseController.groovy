@@ -1,6 +1,5 @@
 package formar
 
-import formar.domain.Course
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -15,7 +14,7 @@ class CourseController {
     }
 
     def show(Course course) {
-        courseActivities = course.activities
+        activities = Activity.getAll().findWhere(course_id: course.id)
         respond course
         
     }

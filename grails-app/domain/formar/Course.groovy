@@ -8,8 +8,6 @@ class Course {
 	String description
 	User user
 	
-	
-
 	static mapping = {
        description  sqlType: 'text'
     }

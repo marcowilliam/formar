@@ -20,6 +20,7 @@
                 <p>
                 <strong>Descrição:</strong>
                 ${course.description}
+                ${activities[0].endDate}
                 </p>
                 </center>
             </div>
