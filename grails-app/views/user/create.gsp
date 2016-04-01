@@ -7,6 +7,7 @@
 
 
 <container>
+    <center>
     <div class="container" style="padding-top:10%;">
         <h2>Cadastro</h2>
         <g:form url="[action:'create',controller:'user']">
@@ -36,6 +37,7 @@
       </p>
           </form>
       </div>
+      </center>
         </fieldset>
         </container>
 
